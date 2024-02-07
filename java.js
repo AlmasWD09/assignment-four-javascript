@@ -56,18 +56,40 @@ function deleteInvalids(array) {
 
 
 
+
+
+
+
+
+
+
+
+
 // ==== assignment part four ====
-// function password(info) {
-//  const words = info;
-//  const objValue = Object.values(words)
+function password(info) {
+    if(!info.name || !info.birthYear || !info.siteName ){
+        return "invalid"
+    }
+    const sentence = info['siteName'][0].toUpperCase()+info['siteName'].slice(1).toLowerCase()+"#"+info.name+"@"+info.birthYear;
+    return sentence;
+}
+// console.log(password({name: 'maisha' , birthYear: 2002 } ));
+
+// { name: 'kolimuddin', birthYear: 1999, siteName: 'google' }  Google#kolimuddin@1999
+// { name: 'rahat' , birthYear: 2002, siteName: 'Facebook' }     Facebook#rahat@2002
+// { name: 'toky' , birthYear: 200, siteName: 'Facebook' }      invalid
+//  {name: 'maisha' , birthYear: 2002 }   invalid
 
 
-// }
-// password({ name: 'kolimuddin' , birthYear: 1999 , siteName: 'google' })
+
+
+
 
 
 
 // ==== assignment part five ====
 function monthlySavings(arr, livingCost) {
-  
+    // console.log('ok');
 }
+
+monthlySavings() 
