@@ -21,30 +21,38 @@ function calculateMoney(ticketSale) {
 
 // ==== assignment part two ====
 function checkName(name) {
-    if(typeof(name) !== 'string'){
+    if (typeof (name) !== 'string') {
         return "Invalid"
     }
     let newArry = name.split('');
-    let lastIndex = (newArry.length-1);
-    if(newArry[lastIndex].toLowerCase() === 'a' || newArry[lastIndex].toLowerCase() === 'y' || newArry[lastIndex].toLowerCase() === 'i' || newArry[lastIndex].toLowerCase() === 'e' || newArry[lastIndex].toLowerCase() === 'o' || newArry[lastIndex].toLowerCase() === 'u' || newArry[lastIndex].toLowerCase() === 'w'){
+    let lastIndex = (newArry.length - 1);
+    if (newArry[lastIndex].toLowerCase() === 'a' || newArry[lastIndex].toLowerCase() === 'y' || newArry[lastIndex].toLowerCase() === 'i' || newArry[lastIndex].toLowerCase() === 'e' || newArry[lastIndex].toLowerCase() === 'o' || newArry[lastIndex].toLowerCase() === 'u' || newArry[lastIndex].toLowerCase() === 'w') {
         return "Good Name";
     }
-    else{
+    else {
         return "Bad Name";
     }
 }
-const result2 = checkName(['Rashed']); // RAFEE  Jhankar 199   [“Rashed”]
-console.log(result2);
+// const result2 = checkName('RAFEE'); // RAFEE  Jhankar 199   [“Rashed”]
+// console.log(result2);
 
 
 
 // ==== assignment part three ====
 function deleteInvalids(array) {
-    // ======== validation part start ===========
-    // ======== validation part end =============
-    // You have to write your code here
+    if (!Array.isArray(array)) {
+        return "Invalid Array"
+    }
+    let newArry = [];
+    for (const num of array) {
+        if (typeof (num) === 'number' && !isNaN(num)) {
+            newArry.push(num)
+        }
+    }
+    return newArry;
 }
-
+// console.log(deleteInvalids(  [1 , null, undefined, 18, -19, NaN, "12", [1, 2], { ob: "lala" }] ));
+//  [1 , null, undefined, 18, -19, NaN, "12", [1, 2], { ob: "lala" }]      ['1' , {num:2} , NaN ]    [ 1 , 2 , -3 ]    {num: [ 1 , 2 , 3 ]}  
 
 
 
@@ -53,7 +61,7 @@ function deleteInvalids(array) {
 //  const words = info;
 //  const objValue = Object.values(words)
 
- 
+
 // }
 // password({ name: 'kolimuddin' , birthYear: 1999 , siteName: 'google' })
 
@@ -61,15 +69,5 @@ function deleteInvalids(array) {
 
 // ==== assignment part five ====
 function monthlySavings(arr, livingCost) {
-    // ======== validation part start ===========
-    // ======== validation part end =============
-    // You have to write your code here
+  
 }
-
-
-// const password = {
-//     name: 'rahat',
-//     birthYear: 2002,
-//     siteName: 'Facebook'
-// }
-// console.log(Array.isArray(password));

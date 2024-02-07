@@ -32,3 +32,19 @@ function checkName(name) {
 }
 const result2 = checkName(['Rashed']); // RAFEE  Jhankar 199   [“Rashed”]
 console.log(result2);
+
+
+// ======== assignment three ======= OK =====================
+function deleteInvalids(array) {
+    if (!Array.isArray(array)) {
+        return "Invalid Array"
+    }
+    let newArry = [];
+    for (const num of array) {
+        if (typeof (num) === 'number' && !isNaN(num)) {
+            newArry.push(num)
+        }
+    }
+    return newArry;
+}
+console.log(deleteInvalids(  [1 , null, undefined, 18, -19, NaN, "12", [1, 2], { ob: "lala" }] ));
