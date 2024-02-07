@@ -1,3 +1,4 @@
+// ======== assignment one ========== OK ============
 function calculateMoney(ticketSale) {
     if (typeof (ticketSale) !== 'number') {
         return "input should be an number"
@@ -14,3 +15,20 @@ function calculateMoney(ticketSale) {
 }
 const result1 = calculateMoney(93);
 console.log(result1);
+
+// ========= assignment two =========== OK =============
+function checkName(name) {
+    if(typeof(name) !== 'string'){
+        return "Invalid"
+    }
+    let newArry = name.split('');
+    let lastIndex = (newArry.length-1);
+    if(newArry[lastIndex].toLowerCase() === 'a' || newArry[lastIndex].toLowerCase() === 'y' || newArry[lastIndex].toLowerCase() === 'i' || newArry[lastIndex].toLowerCase() === 'e' || newArry[lastIndex].toLowerCase() === 'o' || newArry[lastIndex].toLowerCase() === 'u' || newArry[lastIndex].toLowerCase() === 'w'){
+        return "Good Name";
+    }
+    else{
+        return "Bad Name";
+    }
+}
+const result2 = checkName(['Rashed']); // RAFEE  Jhankar 199   [“Rashed”]
+console.log(result2);

@@ -1,3 +1,4 @@
+const { object } = require("webidl-conversions");
 
 function calculateMoney(ticketSale) {
     if (typeof (ticketSale) !== 'number') {
@@ -13,18 +14,27 @@ function calculateMoney(ticketSale) {
     const result = (ticketPrice * ticketSale) - (totalCost);
     return result;
 }
-const result1 = calculateMoney(10);
-console.log(result1);
+// const result1 = calculateMoney(10);
+// console.log(result1);
 
 
 
 // ==== assignment part two ====
 function checkName(name) {
-    // ======== validation part start ===========
-    // ======== validation part end =============
-
+    if(typeof(name) !== 'string'){
+        return "Invalid"
+    }
+    let newArry = name.split('');
+    let lastIndex = (newArry.length-1);
+    if(newArry[lastIndex].toLowerCase() === 'a' || newArry[lastIndex].toLowerCase() === 'y' || newArry[lastIndex].toLowerCase() === 'i' || newArry[lastIndex].toLowerCase() === 'e' || newArry[lastIndex].toLowerCase() === 'o' || newArry[lastIndex].toLowerCase() === 'u' || newArry[lastIndex].toLowerCase() === 'w'){
+        return "Good Name";
+    }
+    else{
+        return "Bad Name";
+    }
 }
-
+const result2 = checkName(['Rashed']); // RAFEE  Jhankar 199   [“Rashed”]
+console.log(result2);
 
 
 
@@ -35,22 +45,17 @@ function deleteInvalids(array) {
     // You have to write your code here
 }
 
-// const password = {
-//     name: 'rahat',
-//     birthYear: 2002,
-//     siteName: 'Facebook'
-// }
-// console.log(Object.values(password));
+
 
 
 // ==== assignment part four ====
-function password(obj) {
+// function password(info) {
+//  const words = info;
+//  const objValue = Object.values(words)
 
-}
-password({ name: 'kolimuddin' , birthYear: 1999 , siteName: 'google' })
-// password({ name: 'rahat' , birthYear: 2002, siteName: 'Facebook' })
-// password({ name: toky , birthYear: 200, siteName: Facebook })
-// password({ name: 'maisha' , birthYear: 2002 } )
+ 
+// }
+// password({ name: 'kolimuddin' , birthYear: 1999 , siteName: 'google' })
 
 
 
@@ -62,3 +67,9 @@ function monthlySavings(arr, livingCost) {
 }
 
 
+// const password = {
+//     name: 'rahat',
+//     birthYear: 2002,
+//     siteName: 'Facebook'
+// }
+// console.log(Array.isArray(password));
